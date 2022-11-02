@@ -7,10 +7,10 @@ it('should get min squared number', () => {
 
 it('should not be empty array', () => {
   const result = getMinSquaredNumber([]);
-  expect(result).not.toEqual([]);
+  expect(result).toEqual(null);
 });
 
 it('should be an array', () => {
   const result = getMinSquaredNumber(6, 4, 7);
-  expect(result).not.toEqual(16);
+  expect(result).toEqual(null);
 });
