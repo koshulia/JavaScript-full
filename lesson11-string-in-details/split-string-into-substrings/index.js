@@ -14,7 +14,7 @@ const splitString = (text, len = 10) => {
     startPosition += len;
   }
 
-  return strArr.join('\n');
+  return strArr;
 };
 
 console.log(splitString('abcd efgh', 4));
