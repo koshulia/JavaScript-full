@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 
-const getAdults = obj => {
+export const getAdults = obj => {
   const resObj = {};
 
   for (let key in obj) {
