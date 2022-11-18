@@ -21,7 +21,10 @@ const renderTasks = tasksList => {
     const checkBoxElem = document.createElement('input');
     checkBoxElem.setAttribute('type', 'checkbox');
     checkBoxElem.checked = done;
-    checkBoxElem.classList.add('.list__item-checkbox');
+    if (done) {
+      listItemElem.classList.add('list__item_done');
+    }
+    checkBoxElem.classList.add('list__item-checkbox');
     listItemElem.append(checkBoxElem, text);
     return listItemElem;
   });
