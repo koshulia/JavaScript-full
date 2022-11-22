@@ -3,6 +3,7 @@ export function finishForm() {
   const password = document.querySelector('input');
   const input = document.createElement('input');
   if (!form) return;
+  input.setAttribute('type', 'text');
   input.setAttribute('name', 'login');
   password.setAttribute('type', 'password');
   form.prepend(input);
