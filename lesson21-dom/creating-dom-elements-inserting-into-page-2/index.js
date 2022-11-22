@@ -13,7 +13,7 @@ export function finishList() {
   listElem.prepend(firstItem);
   listElem.append(eighthItem);
   specialElem.before(fourthItem);
-  specialElem.after(sixthItem);
+  return specialElem.after(sixthItem);
 }
 
 finishList();
