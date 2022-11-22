@@ -9,8 +9,8 @@ export function finishList() {
   sixthItem.textContent = 6;
   const eighthItem = document.createElement('li');
   eighthItem.textContent = 8;
-  listElem.prepend(firstItem);
   if (!listElem) return;
+  listElem.prepend(firstItem);
   listElem.append(eighthItem);
   specialElem.before(fourthItem);
   specialElem.after(sixthItem);
