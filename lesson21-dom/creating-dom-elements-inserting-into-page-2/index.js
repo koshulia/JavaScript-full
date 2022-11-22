@@ -9,7 +9,7 @@ export function finishList() {
   sixthItem.textContent = 6;
   const eighthItem = document.createElement('li');
   eighthItem.textContent = 8;
-  if (!firstItem) return;
+  if (!firstItem) return null;
   listElem.prepend(firstItem);
   listElem.append(eighthItem);
   specialElem.before(fourthItem);
