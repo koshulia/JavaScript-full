@@ -1,8 +1,11 @@
 export function finishForm() {
-  const form = document.querySelector('input');
+  const form = document.querySelector('.login-form');
+  const password = document.querySelector('input');
+  const input = document.createElement('input');
   if (!form) return;
-  form.setAttribute('name', 'login');
-  form.setAttribute('type', 'password');
+  input.setAttribute('name', 'login');
+  password.setAttribute('type', 'password');
+  form.append(input);
 }
 
 finishForm();
