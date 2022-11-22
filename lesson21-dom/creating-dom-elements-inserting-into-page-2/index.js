@@ -7,6 +7,7 @@ export function finishList() {
   fourthItem.textContent = 4;
   const sixthItem = document.createElement('li');
   sixthItem.textContent = 6;
+  if (!firstItem) return;
   listElem.prepend(firstItem);
   specialElem.before(fourthItem);
   specialElem.after(sixthItem);
