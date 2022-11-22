@@ -5,7 +5,7 @@ export function finishForm() {
   if (!form) return;
   input.setAttribute('name', 'login');
   password.setAttribute('type', 'password');
-  form.append(input);
+  form.prepend(input);
 }
 
 finishForm();
