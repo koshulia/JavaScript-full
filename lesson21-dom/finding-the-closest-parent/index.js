@@ -3,6 +3,7 @@ export function getSection(num) {
   const filteredSpan = [...span];
 
   const answer = filteredSpan.find(el => Number(el.getAttribute('data-number')) === num);
+  if (!answer) return;
   const attribute = answer.parentElement.getAttribute('data-section');
   return attribute;
 }
