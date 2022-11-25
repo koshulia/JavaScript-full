@@ -5,4 +5,4 @@ const getCheckbox = () => {
   console.log(checkboxElem.value);
 };
 
-checkboxElem.addEventListener('click', getCheckbox);
+checkboxElem.addEventListener('change', getCheckbox);
