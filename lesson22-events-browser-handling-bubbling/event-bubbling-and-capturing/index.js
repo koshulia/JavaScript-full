@@ -29,9 +29,9 @@ const attachHandlers = () => {
   pElem.addEventListener('click', logGreyP, true);
   spanElem.addEventListener('click', logGreySpan, true);
 
-  divElem.addEventListener('click', logGreenDiv, true);
-  pElem.addEventListener('click', logGreenP, true);
-  spanElem.addEventListener('click', logGreenSpan, true);
+  divElem.addEventListener('click', logGreenDiv);
+  pElem.addEventListener('click', logGreenP);
+  spanElem.addEventListener('click', logGreenSpan);
 };
 
 attachHandlersBtn.addEventListener('click', attachHandlers);
@@ -41,9 +41,9 @@ const removeHandlers = () => {
   pElem.removeEventListener('click', logGreyP, true);
   spanElem.removeEventListener('click', logGreySpan, true);
 
-  divElem.removeEventListener('click', logGreenDiv, true);
-  pElem.removeEventListener('click', logGreenP, true);
-  spanElem.removeEventListener('click', logGreenSpan, true);
+  divElem.removeEventListener('click', logGreenDiv);
+  pElem.removeEventListener('click', logGreenP);
+  spanElem.removeEventListener('click', logGreenSpan);
 };
 
 removeHandlersBtn.addEventListener('click', removeHandlers);
