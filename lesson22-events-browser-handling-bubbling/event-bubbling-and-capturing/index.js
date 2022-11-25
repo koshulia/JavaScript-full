@@ -24,14 +24,6 @@ const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
 const logGreenP = logTarget.bind(null, 'P', 'green');
 const logGreenSpan = logTarget.bind(null, 'SPAN', 'green');
 
-divElem.addEventListener('click', logGrayDiv);
-pElem.addEventListener('click', logGrayP);
-spanElem.addEventListener('click', logGraySpan);
-
-divElem.addEventListener('click', logGreenDiv);
-pElem.addEventListener('click', logGreenP);
-spanElem.addEventListener('click', logGreenSpan);
-
 const attachHandlers = () => {
   divElem.addEventListener('click', logGrayDiv);
   pElem.addEventListener('click', logGrayP);
@@ -55,3 +47,4 @@ const removeHandlers = () => {
 };
 
 removeHandlersBtn.addEventListener('click', removeHandlers);
+attachHandlers();
