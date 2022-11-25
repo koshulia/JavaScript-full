@@ -2,7 +2,7 @@ const checkboxElem = document.querySelector('.task-status');
 
 const getCheckbox = () => {
   console.log(checkboxElem.checked);
-  console.log(checkboxElem.мфдгу);
+  console.log(checkboxElem.value);
 };
 
 checkboxElem.addEventListener('click', getCheckbox);
