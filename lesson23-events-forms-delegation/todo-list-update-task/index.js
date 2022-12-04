@@ -72,6 +72,6 @@ const changeStatus = event => {
 };
 
 inputButtonElem.addEventListener('click', createNewTask);
-listElem.addEventListener('change', changeStatus);
+listElem.addEventListener('click', changeStatus);
 
 renderTasks(tasks);
