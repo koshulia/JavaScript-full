@@ -1,4 +1,5 @@
 export const getDiff = (startDate, endDate) => {
+  if (startDate > endDate) return;
   const res = new Date(startDate) - new Date(endDate);
   const days = Math.round(res / (1000 * 3600 * 24));
   const hours = new Date(res).getUTCHours();
