@@ -4,8 +4,10 @@ export const getDiff = (startDate, endDate) => {
   const hours = new Date(res).getUTCHours();
   const minutes = new Date(res).getMinutes();
   const seconds = new Date(res).getSeconds();
-
-  return `${Math.abs(days)}d ${hours}h ${minutes}m ${seconds}s`;
+  if (startDate < endDate) {
+    return `${Math.abs(days)}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 
 const result = getDiff(new Date(2022, 11, 12, 16, 45, 18), new Date(2019, 4, 5, 10, 30, 56));
