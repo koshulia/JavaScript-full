@@ -1,12 +1,10 @@
 export const getDiff = (startDate, endDate) => {
-  const res = new Date(startDate) - new Date(endDate);
+  const res = Math.abs(new Date(startDate) - new Date(endDate));
   const days = Math.round(res / (1000 * 3600 * 24));
   const hours = new Date(res).getUTCHours();
   const minutes = new Date(res).getMinutes();
   const seconds = new Date(res).getSeconds();
-  if (startDate < endDate) {
-    return `${Math.abs(days)}d ${hours}h ${minutes}m ${seconds}s`;
-  }
+
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 
