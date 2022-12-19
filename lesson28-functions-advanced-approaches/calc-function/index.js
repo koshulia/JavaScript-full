@@ -5,15 +5,18 @@ export const calc = initValue => {
       result += number;
       return this;
     },
+
     mult(number) {
       result *= number;
       return this;
     },
+
     div(number) {
       result /= number;
       return this;
     },
-    substract(number) {
+
+    subtract(number) {
       result -= number;
       return this;
     },
@@ -25,10 +28,10 @@ export const calc = initValue => {
   return calculator;
 };
 
-const result = calc(5).add(3).mult(2).div(4).substract(1).result();
+const result = calc(5).add(3).mult(2).div(4).subtract(1).result();
 
 console.log(result);
 
-const result1 = calc(3).add(6).div(6).substract(7).mult(4).result();
+const result1 = calc(3).add(6).div(6).subtract(7).mult(4).result();
 
 console.log(result1);
