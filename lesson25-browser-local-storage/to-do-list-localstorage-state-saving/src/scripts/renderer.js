@@ -8,7 +8,7 @@ const createCheckbox = ({ done, id }) => {
   checkboxElem.setAttribute('data-id', id);
   checkboxElem.checked = done;
   checkboxElem.dataset.id = id;
-  checkboxElem.classList.add('list__item');
+  checkboxElem.classList.add('list__item-checkbox');
 
   return checkboxElem;
 };
