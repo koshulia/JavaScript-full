@@ -1,4 +1,4 @@
-const calc = initValue => {
+export const calc = initValue => {
   let result = initValue;
   const calculator = {
     add(number) {
@@ -28,3 +28,7 @@ const calc = initValue => {
 const result = calc(5).add(3).mult(2).div(4).substract(1).result();
 
 console.log(result);
+
+const result1 = calc(3).add(6).div(6).substract(7).mult(4).result();
+
+console.log(result1);
