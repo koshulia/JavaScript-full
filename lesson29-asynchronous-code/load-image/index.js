@@ -3,6 +3,7 @@ export const addImage = (imgSrc, callback) => {
   imgElem.setAttribute('alt', 'Nature');
   imgElem.src = imgSrc;
   const containerElem = document.querySelector('.page');
+  if (!imgElem) return;
   containerElem.append(imgElem);
 
   const onImageLoaded = () => {
