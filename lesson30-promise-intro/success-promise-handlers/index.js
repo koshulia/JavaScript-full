@@ -27,8 +27,6 @@ userDataPromise.then(function onSuccess(userData) {
  * Tom и 17 достань с данных, которые приходят в ф-цию onSuccess
  */
 
-userDataPromise.then(function onSuccess(userData, resolve) {
-  userData
-    .addEventListener('load', () => resolve)
-    .then(console.log(`My name is ${userData.name}. I am ${userData.age} years old`));
+userDataPromise.then(userData => {
+  console.log(`My name is ${userData.name}. I am ${userData.age} years old`);
 });
