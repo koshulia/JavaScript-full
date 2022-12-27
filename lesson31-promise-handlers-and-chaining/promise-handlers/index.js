@@ -24,20 +24,20 @@ export const requestUserData = userId => {
   return request;
 };
 
-requestUserData('user-1').then(data => console.log(data));
-requestUserData('user-2')
-  .then(data => console.log(data))
-  .catch(error => console.log(error))
-  .finally(() => console.log('finally'));
+// requestUserData('user-1').then(data => console.log(data));
+// requestUserData('user-2')
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error))
+//   .finally(() => console.log('finally'));
 
-requestUserData('broken')
-  .catch(error => {
-    console.log(error);
-    throw new Error('Error');
-  })
-  .then(data => console.log(data))
-  .catch(err => console.log(err))
-  .finally(() => console.log('finally'));
+// requestUserData('broken')
+//   .catch(error => {
+//     console.log(error);
+//     throw new Error('Error');
+//   })
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err))
+//   .finally(() => console.log('finally'));
 
-requestUserData('broken').catch(error => console.log(error));
-requestUserData('broken-1').finally(() => console.log('finally'));
+// requestUserData('broken').catch(error => console.log(error));
+// requestUserData('broken-1').finally(() => console.log('finally'));
