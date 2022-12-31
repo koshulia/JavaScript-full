@@ -1,7 +1,8 @@
 const getRandomNumber = (from, to) => from + Math.random() * (to - from);
+
 const request = url =>
   new Promise(resolve => {
-    const randomDelay = getRandomNumber(1000, 5000);
+    const randomDelay = getRandomNumber(1000, 3000);
     setTimeout(() => {
       resolve({
         userData: {
@@ -16,12 +17,11 @@ const request = url =>
 const servers = ['https://server.com/us', 'https://server.com/eu', 'https://server.com/au'];
 
 export const getUserASAP = userId => {
-  const userUrls = servers.map(serverUrl => `${serverUrl}/users/${userId}`);
+  const userUrls = servers.map(serverUrl => `${serverUrl}/${userId}`);
   const requests = userUrls.map(userUrl => request(userUrl));
 
-  return Promise.race(requests);
+  const p = Promise.race(requests);
+  return Promise.resolve(p);
 };
 
-getUserASAP('user-id-1')
-  .then(res => console.log(res))
-  .then(res => Promise.resolve(res));
+getUserASAP('user-id-1').then(res => console.log(res));
