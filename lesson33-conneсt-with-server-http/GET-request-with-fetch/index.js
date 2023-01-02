@@ -7,8 +7,8 @@ const fetchUserData = userName => {
 };
 
 const renderUserData = userData => {
-  const { avatar_url, name, location } = userData;
-  userAvatarElem.src = avatar_url;
+  const { avatarUrl, name, location } = userData;
+  userAvatarElem.src = avatarUrl;
   userNameElem.textContent = name;
   userLocationElem.textContent = location ? `from ${location}` : '';
 };
