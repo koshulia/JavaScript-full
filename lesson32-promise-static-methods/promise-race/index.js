@@ -7,21 +7,20 @@ const request = url =>
       resolve({
         userData: {
           name: 'Tom',
-          age: 18,
+          age: 17,
         },
         source: url,
       });
     }, randomDelay);
   });
 
-const servers = ['https://server.com/us', 'https://server.com/eu', 'https://server.com/au'];
+const servers = ['https://server.com/us/', 'https://server.com/eu/', 'https://server.com/au/'];
 
 export const getUserASAP = userId => {
-  const userUrls = servers.map(serverUrl => `${serverUrl}/${userId}`);
+  const userUrls = servers.map(serverUrl => `${serverUrl}${userId}`);
   const requests = userUrls.map(userUrl => request(userUrl));
 
-  const p = Promise.race(requests);
-  return Promise.resolve(p);
+  return Promise.race(requests);
 };
 
 getUserASAP('user-id-1').then(res => console.log(res));
