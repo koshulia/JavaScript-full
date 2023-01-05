@@ -28,16 +28,14 @@ const sendData = userData => {
 };
 
 const getData = () => {
-  return fetch(baseUrl)
-    .then(response => response.json())
-    .then(response => response);
+  return fetch(baseUrl).then(response => JSON.stringify(response.json()));
 };
 // JSON.stringify(response.json());
 
 const onFormSubmit = event => {
   event.preventDefault();
-  const { inputs } = document.forms;
-  const userData = Object.fromEntries(new FormData(inputs));
+  const userData = Object.fromEntries(new FormData(formElem));
+  console.log(userData);
   sendData(userData).then(() => alert(getData()));
   formElem.reset();
 };
