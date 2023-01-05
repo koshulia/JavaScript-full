@@ -39,7 +39,6 @@ const getData = () => {
 const onFormSubmit = event => {
   event.preventDefault();
   const userData = Object.fromEntries(new FormData(formElem));
-  console.log(userData);
   sendData(userData);
   getData();
 };
