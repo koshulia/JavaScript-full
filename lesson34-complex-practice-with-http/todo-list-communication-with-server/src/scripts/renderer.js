@@ -1,5 +1,3 @@
-import { getItem, setItem } from './storage.js';
-
 const listElem = document.querySelector('.list');
 
 const compareTasks = (a, b) => {
@@ -20,27 +18,37 @@ const createCheckbox = ({ done, id }) => {
   checkboxElem.setAttribute('data-id', id);
   checkboxElem.checked = done;
   checkboxElem.dataset.id = id;
-  checkboxElem.classList.add('list__item-checkbox');
+  checkboxElem.classList.add('list-item__checkbox');
 
   return checkboxElem;
 };
 
 const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement('li');
-  listItemElem.classList.add('list__item');
+  listItemElem.classList.add('list-item', 'list__item');
   const checkboxElem = createCheckbox({ done, id });
   if (done) {
-    listItemElem.classList.add('list__item_done');
+    listItemElem.classList.add('list-item_done');
   }
-  listItemElem.append(checkboxElem, text);
+
+  const textElem = document.createElement('span');
+  textElem.classList.add('list-item__text');
+  textElem.textContent = text;
+
+  const deleteBtnElem = document.createElement('button');
+  deleteBtnElem.classList.add('list-item__delete-btn');
+  deleteBtnElem.setAttribute('data-id', id);
+
+  listItemElem.append(checkboxElem, textElem, deleteBtnElem);
 
   return listItemElem;
 };
 
-export const renderTasks = () => {
-  const tasksList = getItem('tasksList') || [];
-
+export const renderTasks = tasksList => {
   listElem.innerHTML = '';
+
+  if (!tasksList) return;
+
   const tasksElems = tasksList.sort(compareTasks).map(createListItem);
 
   listElem.append(...tasksElems);

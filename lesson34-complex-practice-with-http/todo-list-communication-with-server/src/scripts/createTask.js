@@ -1,5 +1,4 @@
 import { renderTasks } from './renderer.js';
-import { setItem } from './storage.js';
 import { createTask, getTasksList } from './tasksGateway.js';
 
 export const onCreateTask = () => {
@@ -13,14 +12,14 @@ export const onCreateTask = () => {
     text,
     done: false,
     createDate: new Date().toISOString(),
+    id: Math.random().toString(),
   };
+
+  console.log(`task`, newTask);
 
   createTask(newTask)
     .then(() => getTasksList())
-    .then(newTasksList => {
-      setItem('tasksList', newTasksList);
-      renderTasks();
-    });
+    .then(newTasksList => renderTasks(newTasksList));
 };
 
 // 1. prepare data
