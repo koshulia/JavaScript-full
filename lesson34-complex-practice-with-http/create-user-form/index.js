@@ -35,7 +35,6 @@ const getData = () => {
       formElem.reset();
     });
 };
-// JSON.stringify(response.json());
 
 const onFormSubmit = event => {
   event.preventDefault();
