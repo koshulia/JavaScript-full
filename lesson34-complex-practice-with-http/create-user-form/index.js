@@ -28,7 +28,12 @@ const sendData = userData => {
 };
 
 const getData = () => {
-  return fetch(baseUrl).then(response => JSON.stringify(response.json()));
+  return fetch(baseUrl)
+    .then(response => response.json())
+    .then(data => {
+      alert(JSON.stringify(data));
+      formElem.reset();
+    });
 };
 // JSON.stringify(response.json());
 
@@ -36,8 +41,8 @@ const onFormSubmit = event => {
   event.preventDefault();
   const userData = Object.fromEntries(new FormData(formElem));
   console.log(userData);
-  sendData(userData).then(() => alert(getData()));
-  formElem.reset();
+  sendData(userData);
+  getData();
 };
 
 formElem.addEventListener('input', validation);
